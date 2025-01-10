@@ -23,6 +23,7 @@ This simple application shows a list of products from different regions with sal
 
 - angular material
 - handsontable
+- flex-layout
+- rxjs
 - ng-mocks
 - jest
-- rxjs
