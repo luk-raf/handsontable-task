@@ -1,7 +1,7 @@
 <div class="form-container">
     <form class="form" [formGroup]="formGroup">
         <mat-form-field class="full-width">
-            <mat-label>Product name</mat-label>
+            <mat-label>Product Name</mat-label>
             <input matInput formControlName="name">
             @if (formGroup.get('name')?.invalid && formGroup.get('name')?.touched) {
             <mat-error>Name is required.</mat-error>
