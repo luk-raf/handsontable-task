@@ -1,0 +1,36 @@
+<div class="form-container">
+    <form class="form" [formGroup]="formGroup">
+        <mat-form-field class="full-width">
+            <mat-label>Product name</mat-label>
+            <input matInput formControlName="name">
+            @if (formGroup.get('name')?.invalid && formGroup.get('name')?.touched) {
+            <mat-error>Name is required.</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Sales</mat-label>
+            <input matInput formControlName="sales">
+            @if (formGroup.get('sales')?.hasError('required') && formGroup.get('sales')?.touched) {
+            <mat-error>Sales is required.</mat-error>
+            }
+            @if (formGroup.get('sales')?.hasError('pattern') && formGroup.get('sales')?.touched) {
+            <mat-error>Sales must be numeric.</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Region</mat-label>
+            <input matInput formControlName="region">
+            @if (formGroup.get('region')?.invalid && formGroup.get('region')?.touched) {
+            <mat-error>Region is required.</mat-error>
+            }
+        </mat-form-field>
+
+        <div fxLayout="row" fxLayoutAlign="end center">
+            <button mat-raised-button type="reset" [disabled]="formGroup.invalid" (click)="onSubmit()">
+                Add new product
+            </button>
+        </div>
+    </form>
+</div>

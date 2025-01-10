@@ -1,0 +1,18 @@
+<!-- Wyglada jak by próbwa zmiany danych w ten sposób nie była wspierana
+ <div>
+    @if(data$ | async; as data){
+    <div>
+        {{data | json}}
+    </div>
+    <hot-table [data]="data" [colHeaders]="true" [rowHeaders]="true" height="auto" [autoWrapRow]="true"
+        [autoWrapCol]="true" licenseKey="non-commercial-and-evaluation">
+        <hot-column data="name" [readOnly]="true" title="ProductName"></hot-column>
+        <hot-column data="sales" [readOnly]="true" title="Sales"></hot-column>
+        <hot-column data="region" [readOnly]="true" title="Region"></hot-column>
+    </hot-table>
+    }
+</div> -->
+
+<div>
+    <hot-table [hotId]="id" [settings]="hotSettings" />
+</div>
