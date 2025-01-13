@@ -3,7 +3,7 @@
         <mat-form-field class="full-width">
             <mat-label>Product Name</mat-label>
             <input matInput formControlName="name">
-            @if (formGroup.get('name')?.invalid && formGroup.get('name')?.touched) {
+            @if (nameFormControl?.invalid && nameFormControl?.touched) {
             <mat-error>Name is required.</mat-error>
             }
         </mat-form-field>
@@ -11,10 +11,10 @@
         <mat-form-field class="full-width">
             <mat-label>Sales</mat-label>
             <input matInput formControlName="sales">
-            @if (formGroup.get('sales')?.hasError('required') && formGroup.get('sales')?.touched) {
+            @if (salesFormControl?.hasError('required') && salesFormControl?.touched) {
             <mat-error>Sales is required.</mat-error>
             }
-            @if (formGroup.get('sales')?.hasError('pattern') && formGroup.get('sales')?.touched) {
+            @if (salesFormControl?.hasError('pattern') && salesFormControl?.touched) {
             <mat-error>Sales must be numeric.</mat-error>
             }
         </mat-form-field>
@@ -22,7 +22,7 @@
         <mat-form-field class="full-width">
             <mat-label>Region</mat-label>
             <input matInput formControlName="region">
-            @if (formGroup.get('region')?.invalid && formGroup.get('region')?.touched) {
+            @if (regionFormControl?.invalid && regionFormControl?.touched) {
             <mat-error>Region is required.</mat-error>
             }
         </mat-form-field>

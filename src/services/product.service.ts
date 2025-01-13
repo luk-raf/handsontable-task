@@ -23,20 +23,17 @@ export const exampleData: Product[] = [
 
 @Injectable()
 export class ProductService {
-  private _products: BehaviorSubject<Product[]> = new BehaviorSubject<
+  private _products$$: BehaviorSubject<Product[]> = new BehaviorSubject<
     Product[]
   >([]);
 
-  readonly products$ = this._products.asObservable();
+  readonly products$ = this._products$$.asObservable();
 
   loadData(): void {
-    this._products.next([...exampleData]);
+    this._products$$.next([...exampleData]);
   }
 
   addNewProduct(newProduct: Product): void {
-    const tempData = this._products.value;
-    tempData.push(newProduct);
-
-    this._products.next(tempData);
+    this._products$$.next([...this._products$$.value, newProduct]);
   }
 }

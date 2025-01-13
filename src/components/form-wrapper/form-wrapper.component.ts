@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
   FormBuilder,
+  FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
@@ -30,6 +31,18 @@ import { Product } from '../../models/product.model';
 })
 export class FormWrapperComponent {
   readonly formGroup: FormGroup<ProductForm>;
+
+  get nameFormControl(): FormControl<string> | undefined {
+    return this.formGroup?.controls.name;
+  }
+
+  get salesFormControl(): FormControl<number | null> | undefined {
+    return this.formGroup?.controls.sales;
+  }
+
+  get regionFormControl(): FormControl<string> | undefined {
+    return this.formGroup?.controls.region;
+  }
 
   constructor(
     private readonly formBuilder: FormBuilder,
